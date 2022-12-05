@@ -312,13 +312,20 @@ PyOSGViewer PyGetViewer(py::object py_env) {
 }
 
 
+string extract_unicode(boost::python::object u) {
+  using namespace boost::python;
+  const char* value = extract<const char*>(str(u).encode("utf-8"));
+  return string(value);
+}
+
 BOOST_PYTHON_MODULE(ctrajoptpy) {
 
   np_mod = py::import("numpy");
 
   py::object openravepy = py::import("openravepy");
 
-  string pyversion = py::extract<string>(openravepy.attr("__version__"));
+  string pyversion = extract_unicode(openravepy.attr("__version__"));
+  
   if (OPENRAVE_VERSION_STRING != pyversion) {
     PRINT_AND_THROW("the openrave on your pythonpath is different from the openrave version that trajopt links to!");
   }
