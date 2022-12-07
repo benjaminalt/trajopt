@@ -36,3 +36,5 @@ ext/rbdl/doc
 *.vcproj
 *.sln
 callgrind.*
+
+.vscode

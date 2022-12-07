@@ -3,9 +3,9 @@ project(trajopt)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
 
-option(DEVEL_MODE "build with compiler more errors" OFF)
+option(DEVEL_MODE "build with compiler more errors" ON)
 if (DEVEL_MODE) 
-  set(CMAKE_CXX_FLAGS "-Werror -Wall -Wno-sign-compare")
+  set(CMAKE_CXX_FLAGS "-Werror -Wall -Wno-sign-compare -Wno-undef")
 endif(DEVEL_MODE)
 
 set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX "-isystem ")        

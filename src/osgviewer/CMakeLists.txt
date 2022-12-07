@@ -24,7 +24,7 @@ endif()
 
                     
 add_library(osgviewer
-  osgviewer.cpp 
+  osgviewer.cpp
   robot_ui.cpp
 )
 target_link_libraries(osgviewer ${OSG_LIBRARIES} ${OpenRAVE_BOTH_LIBRARIES} ${Boost_SYSTEM_LIBRARY} utils)

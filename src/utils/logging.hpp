@@ -12,8 +12,7 @@ enum LogLevel {
   LevelTrace = 5
 };
 
-extern LogLevel gLogLevel;
-inline LogLevel GetLogLevel() {return gLogLevel;}
+inline LogLevel GetLogLevel() {return LevelInfo;}
 
   
 #define FATAL_PREFIX "\x1b[31m[FATAL] "
